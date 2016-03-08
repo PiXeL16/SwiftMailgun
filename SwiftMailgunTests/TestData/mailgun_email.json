@@ -1,0 +1,7 @@
+{
+    "html": "<p>Example HTML content</p>",
+    "text": "Example text content",
+    "subject": "example subject",
+    "from": "Excited User <mailgun@test.com>",
+    "to": "cjimenez16@gmail.com"
+}
