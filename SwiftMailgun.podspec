@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
 
   s.name         = "SwiftMailgun"
-  s.version      = "1.0.2"
-  s.summary      = "A simple iOS client for the Mandrill Mail API"
+  s.version      = "0.0.1"
+  s.summary      = "SwiftMailgun provides simple alternative when you need to send an email with your iOS app using MailGun."
   s.description  = <<-DESC
-SwiftMandrill provides simple alternative when you need to send an email with your iOS app.
+SwiftMailgun provides simple alternative when you need to send an email with your iOS app using MailGun.
     DESC
 
-  s.homepage     = "https://github.com/PiXeL16/SwiftMandrill"
+  s.homepage     = "https://github.com/PiXeL16/SwiftMailgun"
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.author             = { "Chris Jimenez" => "cjimenez16@gmail.com" }
@@ -15,8 +15,8 @@ SwiftMandrill provides simple alternative when you need to send an email with yo
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/PiXeL16/SwiftMandrill.git", :tag => s.version }
-  s.source_files  = "SwiftMandrill/", "SwiftMandrill/**/*.{h,m,swift}"
+  s.source       = { :git => "https://github.com/PiXeL16/SwiftMailgun.git", :tag => s.version }
+  s.source_files  = "SwiftMailgun/", "SwiftMailgun/**/*.{h,m,swift}"
 
   s.requires_arc = true
   s.dependency 'ObjectMapper', '~> 1.1'
