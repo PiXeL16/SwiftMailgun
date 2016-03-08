@@ -26,6 +26,16 @@ public class StringExtensionsSpecs: QuickSpec{
             
         }
         
+        
+        it("htmlToString invalid"){
+            
+            let html:String = "bold html"
+            
+            expect(html.htmlToString).toNot(beNil())
+            expect(html.htmlToString).to(equal("bold html"))
+            
+        }
+        
     }
     
     
