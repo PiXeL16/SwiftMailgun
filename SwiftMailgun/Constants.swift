@@ -15,6 +15,6 @@ import Foundation
 public struct Constants {
     
     /// Mailgun API URL
-    public static let mailgunApiURL = "https://api.mailgun.net/v3/"
+    public static let mailgunApiURL = "api.mailgun.net/v3/"
     
 }

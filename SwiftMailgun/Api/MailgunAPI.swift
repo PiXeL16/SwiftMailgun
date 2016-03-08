@@ -27,24 +27,23 @@ public class MailgunAPI {
     //ApiRouter enum that will take care of the routing of the urls and paths of the API
     private enum ApiRouter {
         
-        static let baseURL = Constants.mailgunApiURL;
         
-        case sendEmail
+        case sendEmail(String)
         
         var path: String {
             switch self{
-            case .sendEmail:
-                return "/messages/";
+            case .sendEmail(let domain):
+                return "\(domain)/messages";
                 
             }
         }
         
-        private func urlStringWithDomain(domain:String) -> URLStringConvertible{
+        private func urlStringWithApiKey(apiKey : String) -> URLStringConvertible{
             
+            //Builds the url with the API key
+            let urlWithKey = "https://api:\(apiKey)@\(Constants.mailgunApiURL)"
             //Build API URL
-            var url = NSURL(string: ApiRouter.baseURL)!
-            //TODO: Fix this to a one line call
-            url = url.URLByAppendingPathComponent(domain)
+            var url = NSURL(string: urlWithKey)!
             url = url.URLByAppendingPathComponent(path)
             
             let urlRequest = NSMutableURLRequest(URL: url)
@@ -71,6 +70,15 @@ public class MailgunAPI {
     }
     
     
+    /**
+     Sends an email with the provided parameters
+     
+     - parameter to:                email to
+     - parameter from:              email from
+     - parameter subject:           subject of the email
+     - parameter bodyHTML:          html body of the email, can be also plain text
+     - parameter completionHandler: the completion handler
+     */
     public func sendEmail(to to:String, from:String, subject:String, bodyHTML:String, completionHandler:(MailgunResult)-> Void) -> Void{
         
         let email = MailgunEmail(to: to, from: from, subject: subject, html: bodyHTML)
@@ -79,60 +87,88 @@ public class MailgunAPI {
         
     }
     
+    /**
+     Send the email with the email object
+     
+     - parameter email:             email object
+     - parameter completionHandler: completion handler
+     */
     public func sendEmail(email: MailgunEmail, completionHandler:(MailgunResult)-> Void) -> Void{
         
         
-        let headerParams : [String:String] = [
-            "api":self.apiKey
-        ]
-        
+        /// Serialize the object to an dictionary of [String:Anyobject]
         let params = Mapper().toJSON(email)
         
-        Alamofire.request(.POST, ApiRouter.sendEmail.urlStringWithDomain(self.domain), parameters: params, encoding: .JSON, headers: headerParams)
-            .validate()
-            .responseJSON{ response in
+        
+        //The mailgun API expect multipart params. 
+        //Setups the multipart request
+        Alamofire.upload(.POST, ApiRouter.sendEmail(self.domain).urlStringWithApiKey(self.apiKey), multipartFormData: { multipartFormData in
+            
+                // add parameters as multipart form data to the body
+                for (key, value) in params {
                 
-                switch response.result
-                {
-                    
+                    multipartFormData.appendBodyPart(data: value.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!, name: key)
+                }
+            
+            },
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                //Check if it works
+                case .Success(let upload, _, _):
+                    upload.responseJSON { response in
+                        
+                        //Check the response
+                        switch response.result{
+                            
+                        case .Failure(let error):
+                            
+                            print("error calling \(ApiRouter.sendEmail)")
+                            
+                            let errorMessage = error.description
+                            
+                            if let data = response.data
+                            {
+                                let errorData = String(data: data, encoding: NSUTF8StringEncoding)
+                                print(errorData)
+                            }
+                            
+                            let result = MailgunResult(success: false, message: errorMessage, id: nil)
+                            
+                            completionHandler(result)
+                            return
+                            
+                        case .Success:
+                            
+                            if let value: AnyObject = response.result.value {
+                                
+                                let result:MailgunResult = ObjectParser.objectFromJson(value)!
+                                
+                                result.success = true
+                                
+                                completionHandler(result)
+                                
+                                return
+                                
+                            }
+                            
+                        }
+                    }
+                //Check if we fail
                 case .Failure(let error):
                     
                     print("error calling \(ApiRouter.sendEmail)")
+                    print(error)
                     
-                    var errorMessage = error.description
+                    let errorMessage = "There was an error"
                     
-                    if let data = response.data
-                    {
-                        
-                        //                        if let errorResult: MandrillError = ObjectParser.objectFromJsonString(String(data: data, encoding: NSUTF8StringEncoding))
-                        //                        {
-                        //                            errorMessage = errorResult.message!
-                        //                        }
-                    }
-                    
-                    let result = MailgunResult(success: false, message: "Error", id: nil)
+                    let result = MailgunResult(success: false, message: errorMessage, id: nil)
                     
                     completionHandler(result)
                     return
                     
-                case .Success:
-                    
-                    if let value: AnyObject = response.result.value {
-                        
-                        let result:MailgunResult = ObjectParser.objectFromJson(value)!
-                        
-                        result.success = true
-                        
-                        completionHandler(result)
-                        
-                        return
-                        
-                        
-                    }
-                    
                 }
-        }
-        
+            }
+        )
         
     }
     

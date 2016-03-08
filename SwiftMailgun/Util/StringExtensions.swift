@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Extension to remove HTML Attributes from Strings
-extension String {
+public extension String {
     
     var htmlToAttributedString: NSAttributedString? {
         guard

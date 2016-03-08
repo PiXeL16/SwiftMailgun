@@ -12,7 +12,6 @@ import Nimble
 import Quick
 import SwiftMailgun
 import ObjectMapper
-import Keys
 
 
 /// Model specs using fake data.

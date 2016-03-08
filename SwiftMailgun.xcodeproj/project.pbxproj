@@ -19,6 +19,8 @@
 		8382875A1C8E6F6600F5D92D /* mailgun_email.json in Resources */ = {isa = PBXBuildFile; fileRef = 838287591C8E6F6600F5D92D /* mailgun_email.json */; };
 		8382875C1C8E6FE200F5D92D /* JsonFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8382875B1C8E6FE200F5D92D /* JsonFileReader.swift */; };
 		8382875E1C8E700E00F5D92D /* ModelSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8382875D1C8E700E00F5D92D /* ModelSpecs.swift */; };
+		838287601C8E728700F5D92D /* MailgunApiSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8382875F1C8E728700F5D92D /* MailgunApiSpecs.swift */; };
+		838287621C8EB2BB00F5D92D /* StringExtensionsSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838287611C8EB2BB00F5D92D /* StringExtensionsSpecs.swift */; };
 		83A8BDD61C8E454400EDEF5F /* MailgunResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8BDD51C8E454400EDEF5F /* MailgunResult.swift */; };
 		C70F22FDEE9D858B06C9F088 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC26BBAC8945BDA63A218C6C /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +54,8 @@
 		838287591C8E6F6600F5D92D /* mailgun_email.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mailgun_email.json; sourceTree = "<group>"; };
 		8382875B1C8E6FE200F5D92D /* JsonFileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonFileReader.swift; sourceTree = "<group>"; };
 		8382875D1C8E700E00F5D92D /* ModelSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelSpecs.swift; sourceTree = "<group>"; };
+		8382875F1C8E728700F5D92D /* MailgunApiSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailgunApiSpecs.swift; sourceTree = "<group>"; };
+		838287611C8EB2BB00F5D92D /* StringExtensionsSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionsSpecs.swift; sourceTree = "<group>"; };
 		83A8BDD51C8E454400EDEF5F /* MailgunResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailgunResult.swift; sourceTree = "<group>"; };
 		B7BC016FED91322BCF24842F /* Pods-SwiftMailgunTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMailgunTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMailgunTests/Pods-SwiftMailgunTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FC26BBAC8945BDA63A218C6C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +155,8 @@
 				838287541C8E6EC000F5D92D /* TestData */,
 				8344DAF41C8698B400F1B181 /* Info.plist */,
 				8382875D1C8E700E00F5D92D /* ModelSpecs.swift */,
+				8382875F1C8E728700F5D92D /* MailgunApiSpecs.swift */,
+				838287611C8EB2BB00F5D92D /* StringExtensionsSpecs.swift */,
 			);
 			path = SwiftMailgunTests;
 			sourceTree = "<group>";
@@ -391,8 +397,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				838287601C8E728700F5D92D /* MailgunApiSpecs.swift in Sources */,
 				8382875E1C8E700E00F5D92D /* ModelSpecs.swift in Sources */,
 				8382875C1C8E6FE200F5D92D /* JsonFileReader.swift in Sources */,
+				838287621C8EB2BB00F5D92D /* StringExtensionsSpecs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
