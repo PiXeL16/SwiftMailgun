@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name         = "SwiftMailgun"
   s.version      = "0.0.1"
-  s.summary      = "SwiftMailgun provides simple alternative when you need to send an email with your iOS app using MailGun."
+  s.summary      = "A simple alternative when you need to send an email with your iOS app using MailGun."
   s.description  = <<-DESC
 SwiftMailgun provides simple alternative when you need to send an email with your iOS app using MailGun.
     DESC
