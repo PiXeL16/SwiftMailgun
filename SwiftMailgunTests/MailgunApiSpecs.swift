@@ -46,7 +46,7 @@ class MailgunApiSpecs: QuickSpec{
             
             var result : MailgunResult? = nil
             
-            mailgun.sendEmail(to: "cjimenez16@gmail.com", from: "mailgun@test.com", subject: "This is a test", bodyHTML: "<b>test<b>") { mailgunResult in
+            mailgun.sendEmail(to: "cjimenez16@gmail.com", from: "<Send To Me> mailgun@test.com", subject: "This is a test", bodyHTML: "<b>test<b>") { mailgunResult in
                 
                 result = mailgunResult
                 
