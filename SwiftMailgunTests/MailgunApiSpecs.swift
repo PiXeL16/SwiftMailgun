@@ -19,7 +19,7 @@ class MailgunApiSpecs: QuickSpec{
     
     override func spec() {
         
-        let timeout: NSTimeInterval = 10
+        let timeout: TimeInterval = 10
         
         it("send email without api valid api key"){
             

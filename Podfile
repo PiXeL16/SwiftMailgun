@@ -3,8 +3,8 @@ use_frameworks!
 
 plugin 'cocoapods-keys'
 
-pod 'Alamofire', '~> 3.0'
-pod 'ObjectMapper', '~> 1.1'
+pod 'Alamofire', '~> 4.2.0'
+pod 'ObjectMapper', '~> 2.2.1'
 
 target 'SwiftMailgun' do
 

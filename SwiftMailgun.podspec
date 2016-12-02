@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SwiftMailgun"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A simple alternative when you need to send an email with your iOS app using MailGun."
   s.description  = <<-DESC
 SwiftMailgun provides simple alternative when you need to send an email with your iOS app using MailGun.
@@ -19,7 +19,7 @@ SwiftMailgun provides simple alternative when you need to send an email with you
   s.source_files  = "SwiftMailgun/", "SwiftMailgun/**/*.{h,m,swift}"
 
   s.requires_arc = true
-  s.dependency 'ObjectMapper', '~> 1.1'
-  s.dependency 'Alamofire', '~> 3.0'
+  s.dependency 'ObjectMapper', '~> 2.2.1'
+  s.dependency 'Alamofire', '~> 4.2.0'
 
 end

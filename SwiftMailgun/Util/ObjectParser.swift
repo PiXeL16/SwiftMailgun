@@ -10,7 +10,7 @@ import Foundation
 
 import ObjectMapper
 
-public class ObjectParser
+open class ObjectParser
 {
     
     /**
@@ -20,9 +20,9 @@ public class ObjectParser
      
      - returns: object conforming to Mappable
      */
-    public class func objectFromJson<T: Mappable>(json: AnyObject?) -> T? {
+    open class func objectFromJson<T: Mappable>(_ json: AnyObject?) -> T? {
         
-        return Mapper<T>().map(json)
+        return Mapper<T>().map(JSONObject: json)
     }
     
     
@@ -33,9 +33,9 @@ public class ObjectParser
      
      - returns:
      */
-    public class func objectFromJsonString<T: Mappable>(json: String?) -> T? {
+    open class func objectFromJsonString<T: Mappable>(_ json: String?) -> T? {
         
-        return Mapper<T>().map(json)
+        return Mapper<T>().map(JSONString: json!)
     }
     
     /**
@@ -44,9 +44,9 @@ public class ObjectParser
      
      - returns: array of objects
      */
-    public class func objectFromJsonArray<T: Mappable>(json: AnyObject?) -> [T]? {
+    open class func objectFromJsonArray<T: Mappable>(_ json: AnyObject?) -> [T]? {
         
-        return Mapper<T>().mapArray(json)
+        return Mapper<T>().mapArray(JSONObject: json)
     }
     
     

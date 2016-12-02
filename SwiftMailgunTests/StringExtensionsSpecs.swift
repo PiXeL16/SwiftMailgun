@@ -13,9 +13,9 @@ import Nimble
 import Quick
 import SwiftMailgun
 
-public class StringExtensionsSpecs: QuickSpec{
+open class StringExtensionsSpecs: QuickSpec{
     
-    override public func spec() {
+    override open func spec() {
         
         it("htmlToString valid"){
             
