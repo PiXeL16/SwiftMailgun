@@ -10,13 +10,13 @@ import Foundation
 import ObjectMapper
 
 
-public class MailgunResult: Mappable{
+open class MailgunResult: Mappable{
     
-    public var success: Bool = false
-    public var message: String?
-    public var id: String?
+    open var success: Bool = false
+    open var message: String?
+    open var id: String?
     
-    public var hasError : Bool{
+    open var hasError : Bool{
         return !success
     }
     
@@ -32,9 +32,9 @@ public class MailgunResult: Mappable{
         
     }
 
-    public required init?(_ map: Map) {}
+    public required init?(map: Map) {}
     
-    public func mapping(map: Map) {
+    open func mapping(map: Map) {
         message  <- map["message"]
         id       <- map["id"]
     }

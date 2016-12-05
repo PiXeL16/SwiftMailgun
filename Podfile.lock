@@ -1,28 +1,28 @@
 PODS:
-  - Alamofire (3.2.1)
+  - Alamofire (4.2.0)
   - Keys (1.0.0)
-  - Nimble (3.0.0)
-  - ObjectMapper (1.1.5)
-  - Quick (0.8.0)
+  - Nimble (5.1.1)
+  - ObjectMapper (2.2.1)
+  - Quick (1.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.0)
+  - Alamofire (~> 4.2.0)
   - Keys (from `Pods/CocoaPodsKeys`)
-  - Nimble (~> 3.0.0)
-  - ObjectMapper (~> 1.1)
-  - Quick (~> 0.8.0)
+  - Nimble
+  - ObjectMapper (~> 2.2.1)
+  - Quick
 
 EXTERNAL SOURCES:
   Keys:
     :path: Pods/CocoaPodsKeys
 
 SPEC CHECKSUMS:
-  Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   Keys: 9c35bf00f612ee1d48556f4a4b9b4551e224e90f
-  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
-  ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
-  Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
+  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
+  ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
+  Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
 
-PODFILE CHECKSUM: ab0d0d8bf61d415d9d35abf4af52317acd167dd9
+PODFILE CHECKSUM: c90dd2f3514c0053e8064c57c4138e6f65234049
 
-COCOAPODS: 1.0.0.beta.3
+COCOAPODS: 1.1.1

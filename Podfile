@@ -3,8 +3,8 @@ use_frameworks!
 
 plugin 'cocoapods-keys'
 
-pod 'Alamofire', '~> 3.0'
-pod 'ObjectMapper', '~> 1.1'
+pod 'Alamofire', '~> 4.2.0'
+pod 'ObjectMapper', '~> 2.2.1'
 
 target 'SwiftMailgun' do
 
@@ -12,8 +12,8 @@ end
 
 target 'SwiftMailgunTests' do
  
- pod 'Quick', '~> 0.8.0'
- pod 'Nimble', '~> 3.0.0'
+ pod 'Quick'
+ pod 'Nimble'
 
 plugin 'cocoapods-keys', {
   :project => "SwiftMailgun",

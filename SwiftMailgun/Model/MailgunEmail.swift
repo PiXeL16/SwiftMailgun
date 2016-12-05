@@ -10,16 +10,16 @@ import Foundation
 import ObjectMapper
 
 
-public class MailgunEmail : Mappable{
+open class MailgunEmail : Mappable{
     
-    public var from     :String?
-    public var to       :String?
-    public var subject  :String?
-    public var html     :String?
-    public var text     :String?
+    open var from     :String?
+    open var to       :String?
+    open var subject  :String?
+    open var html     :String?
+    open var text     :String?
     
     
-    public required init?(_ map: Map) {}
+    public required init?(map: Map) {}
     
     public init(){}
     
@@ -40,7 +40,7 @@ public class MailgunEmail : Mappable{
      
      - parameter map: <#map description#>
      */
-    public func mapping(map: Map){
+    open func mapping(map: Map){
         to       <- map["to"]
         from     <- map["from"]
         subject  <- map["subject"]
