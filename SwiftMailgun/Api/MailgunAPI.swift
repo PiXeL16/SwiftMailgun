@@ -79,7 +79,7 @@ open class MailgunAPI {
      - parameter bodyHTML:          html body of the email, can be also plain text
      - parameter completionHandler: the completion handler
      */
-    open func sendEmail(to:String, from:String, subject:String, bodyHTML:String, completionHandler:@escaping (MailgunResult)-> Void) -> Void{
+    open func sendEmail(to:String, from:String, subject:String, bodyHTML:String, completionHandler:@escaping (MailgunResult)-> Void) -> Void {
         
         let email = MailgunEmail(to: to, from: from, subject: subject, html: bodyHTML)
         
@@ -93,22 +93,20 @@ open class MailgunAPI {
      - parameter email:             email object
      - parameter completionHandler: completion handler
      */
-    open func sendEmail(_ email: MailgunEmail, completionHandler:@escaping (MailgunResult)-> Void) -> Void{
-        
+    open func sendEmail(_ email: MailgunEmail, completionHandler:@escaping (MailgunResult)-> Void) -> Void {
         
         /// Serialize the object to an dictionary of [String:Anyobject]
         let params = Mapper().toJSON(email)
-        
         
         //The mailgun API expect multipart params. 
         //Setups the multipart request
         Alamofire.upload(multipartFormData: { multipartFormData in
             
                 // add parameters as multipart form data to the body
-                for (key, value) in params {
-                
-                    multipartFormData.append((value as! String).data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName: key)
-                }
+            for (key, value) in params {
+                    
+                multipartFormData.append((value as! String).data(using: .utf8, allowLossyConversion: false)!, withName: key)
+            }
         
         }, to: ApiRouter.sendEmail(self.domain).urlStringWithApiKey(self.apiKey), encodingCompletion: { encodingResult in
                 switch encodingResult {
