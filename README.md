@@ -1,5 +1,6 @@
 # SwiftMailgun
 [![Build Status](https://travis-ci.org/PiXeL16/SwiftMailgun.svg?branch=master)](https://travis-ci.org/PiXeL16/SwiftMailgun/) [![codecov.io](https://codecov.io/github/PiXeL16/SwiftMailgun/coverage.svg?branch=master)](https://codecov.io/github/PiXeL16/SwiftMailgun?branch=master) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/SwiftMailgun.svg)](https://img.shields.io/cocoapods/v/SwiftMailgun.svg) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/PiXeL16/SwiftMailgun/master/LICENSE)
+(https://img.shields.io/badge/language-Swift%203.0-orange.svg)](https://swift.org) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)]
 
 SwiftMailgun provides simple alternative when you need to send an email with your iOS app using MailGun.
 
