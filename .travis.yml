@@ -7,7 +7,8 @@ env:
 before_install:
   - bundle install
   - bundle exec pod update
-  - pod keys set Mailgun_Api_Key $MailgunApiKey
+  - bundle exec pod install
+  - bundle exec pod keys set Mailgun_Api_Key $MailgunApiKey
 script:
   - set -o pipefail
   - xcodebuild -version
