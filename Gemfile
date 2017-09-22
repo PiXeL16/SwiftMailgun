@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 # The Cocoa library package manager.
 # The Cocoa library package manager.
-# gem 'cocoapods --pre'
 gem 'cocoapods'
 gem 'cocoapods-keys'
 # A CocoaPods plugin to remove and de-intergrate CocoaPods from your project    .
