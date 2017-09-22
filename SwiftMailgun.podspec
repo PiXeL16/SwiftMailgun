@@ -19,7 +19,7 @@ SwiftMailgun provides simple alternative when you need to send an email with you
   s.source_files  = "SwiftMailgun/", "SwiftMailgun/**/*.{h,m,swift}"
 
   s.requires_arc = true
-  s.dependency 'ObjectMapper', '~> 2.2.1'
-  s.dependency 'Alamofire', '~> 4.2.0'
+  s.dependency 'ObjectMapper'
+  s.dependency 'Alamofire'
 
 end
