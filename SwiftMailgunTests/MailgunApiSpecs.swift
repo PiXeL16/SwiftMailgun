@@ -10,9 +10,9 @@ import Foundation
 
 import Nimble
 import Quick
-import SwiftMailgun
 import ObjectMapper
 import Keys
+@testable import SwiftMailgun
 
 class MailgunApiSpecs: QuickSpec{
     
@@ -40,9 +40,9 @@ class MailgunApiSpecs: QuickSpec{
         
         it("send email with valid api key"){
             
-            let keys = SwiftmailgunKeys()
+            let keys = SwiftMailgunKeys()
             
-            let mailgun = MailgunAPI(apiKey: keys.mailgun_Api_Key(), clientDomain: "sandboxbe44cd7651a44ddb85c646f747d94d7d.mailgun.org")
+            let mailgun = MailgunAPI(apiKey: keys.mailgun_Api_Key, clientDomain: "sandboxbe44cd7651a44ddb85c646f747d94d7d.mailgun.org")
             
             var result : MailgunResult? = nil
             

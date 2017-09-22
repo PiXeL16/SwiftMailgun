@@ -8,10 +8,10 @@
 
 import Foundation
 
-
 import Nimble
 import Quick
 import SwiftMailgun
+@testable import SwiftMailgun
 
 open class StringExtensionsSpecs: QuickSpec{
     

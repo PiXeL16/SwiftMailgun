@@ -10,8 +10,8 @@ import Foundation
 
 import Nimble
 import Quick
-import SwiftMailgun
 import ObjectMapper
+@testable import SwiftMailgun
 
 
 /// Model specs using fake data.

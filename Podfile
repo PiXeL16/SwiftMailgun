@@ -3,15 +3,14 @@ use_frameworks!
 
 plugin 'cocoapods-keys'
 
-pod 'Alamofire', '~> 4.2.0'
-pod 'ObjectMapper', '~> 2.2.1'
+pod 'Alamofire'
+pod 'ObjectMapper'
 
 target 'SwiftMailgun' do
 
 end
 
 target 'SwiftMailgunTests' do
- 
  pod 'Quick'
  pod 'Nimble'
 
